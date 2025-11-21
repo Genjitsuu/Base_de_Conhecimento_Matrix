@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>Base de Conhecimento</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Base de Conhecimento Matrix</title>
 </head>
 <body>
-  
-  <header>
-    <h1>Base de Conhecimento de Programação</h1>
-    <form onsubmit="event.preventDefault(); iniciarBusca();">
-      <input type="text" id="input-busca" placeholder="Digite um nome de uma linguagem...">
-      <button id="botao-busca">Buscar</button>
-    </form>
-  </header>
-  
-  <main>
-    <section class="card-container">
-      </section>
-  </main>
-  
-  <footer class="footer">
-    <ul class="footer-links">
-      <li>
-        <a href="https://github.com/Genjitsuu" target="_blank">GitHub</a>
-      </li>
-      <li>
-        <a href="https://www.instagram.com/thtambara?igsh=MWJzeDFreXNzN2loNg==" target="_blank">Instagram</a>
-      </li>
-      <li>
-        <a href="https://www.alura.com.br/" target="_blank">Alura</a>
-      </li>
-    </ul>
-  </footer>
+  <canvas id="matrix-bg"></canvas>
+
+  <div class="content-wrapper">
+      <header>
+        <h1>Base de Conhecimento <span class="blink">_</span></h1>
+        
+        <form id="form-busca">
+            <label for="input-busca" class="sr-only">Buscar linguagem:</label>
+            <input type="text" id="input-busca" class="search-input" placeholder="Decodificar linguagem...">
+            <button type="submit" id="botao-busca" class="search-button" aria-label="Buscar">
+                <span class="material-symbols-outlined">search</span>
+            </button>
+        </form>
+      </header>
+      
+      <main>
+        <section id="card-container">
+          </section>
+      </main>
+      
+      <footer class="footer">
+        <ul class="footer-links">
+          <li><a href="https://github.com/Genjitsuu" target="_blank">GitHub</a></li>
+          <li><a href="https://www.instagram.com/thtambara" target="_blank">Instagram</a></li>
+          <li><a href="https://www.alura.com.br/" target="_blank">Alura</a></li>
+        </ul>
+      </footer>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
