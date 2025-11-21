@@ -1,91 +1,146 @@
 // Variáveis do DOM
-const cardContainer = document.querySelector(".card-container");
+const cardContainer = document.getElementById("card-container");
 const inputBusca = document.getElementById("input-busca");
+const formBusca = document.getElementById("form-busca");
 
-// Variável para armazenar os dados carregados apenas uma vez
+// Variável para armazenar os dados
 let todasLinguagens = [];
 
-/**
- * Carrega o arquivo JSON e armazena os dados.
- * É chamada apenas uma vez ao carregar a página.
- */
+// Normaliza texto
+const normalizarTexto = (texto) => {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+};
+
+// Debounce
+function debounce(func, delay) {
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => { func.apply(this, args); }, delay);
+    };
+}
+
+/* --- Lógica de Negócio (Busca e Renderização) --- */
+
 async function carregarDados() {
+  cardContainer.innerHTML = `<p class="feedback-mensagem">Inicializando sistema...</p>`;
   try {
-    // Note: O nome do arquivo foi padronizado para 'data.json'
     const resposta = await fetch("data.json");
-    
-    if (!resposta.ok) {
-        throw new Error(`Erro ao carregar dados: ${resposta.status}`);
-    }
-    
+    if (!resposta.ok) throw new Error(`Erro: ${resposta.status}`);
     todasLinguagens = await resposta.json();
-    
-    // Renderiza todos os cards após o carregamento inicial
     renderizarCards(todasLinguagens);
   } catch (erro) {
-    console.error("Falha no carregamento da base de dados:", erro);
-    cardContainer.innerHTML = `<p class="erro-mensagem">⚠️ Não foi possível carregar a base de conhecimento. Tente novamente mais tarde.</p>`;
+    console.error("Falha no sistema:", erro);
+    cardContainer.innerHTML = `<p class="erro-mensagem">⚠️ Falha na conexão com a base de dados.</p>`;
   }
 }
 
-/**
- * Lógica principal de busca. Filtra os cards com base no input do usuário.
- * É chamada pelo 'onsubmit' do formulário (ao clicar em 'Buscar' ou apertar Enter).
- */
 function iniciarBusca() {
-  // Garantia: Se o input não existir (improvável com o HTML sugerido), a busca não ocorre
-  if (!inputBusca) return; 
+  if (!inputBusca) return;
+  const termo = normalizarTexto(inputBusca.value.trim());
 
-  // 1. Obtém o termo de busca em minúsculas
-  const termo = inputBusca.value.toLowerCase().trim();
-
-  // 2. Filtra o array de dados
   const dadosFiltrados = todasLinguagens.filter(dado => {
-    // Verifica se o termo de busca está no nome OU na descrição
-    const nome = dado.nome.toLowerCase();
-    const descricao = dado.descricao.toLowerCase();
-    
+    const nome = normalizarTexto(dado.nome);
+    const descricao = normalizarTexto(dado.descricao);
     return nome.includes(termo) || descricao.includes(termo);
   });
-  
-  // 3. Renderiza os resultados filtrados
   renderizarCards(dadosFiltrados);
 }
 
-/**
- * Limpa o container e renderiza os cards de um array de dados específico.
- * @param {Array<Object>} dados - O array de linguagens a ser renderizado.
- */
 function renderizarCards(dados) {
-  // Limpa o conteúdo anterior
   cardContainer.innerHTML = ""; 
-  
-  // Se não houver resultados, mostra uma mensagem de feedback
   if (dados.length === 0) {
-    cardContainer.innerHTML = `<p class="feedback-mensagem">Nenhuma linguagem encontrada com esse termo.</p>`;
+    cardContainer.innerHTML = `<p class="feedback-mensagem">Nenhum registro encontrado no sistema.</p>`;
     return;
   }
+  
+  const fragment = document.createDocumentFragment();
 
-  // Cria e anexa os elementos Article
   for (let dado of dados) {
     const article = document.createElement("article");
     article.classList.add("card");
-    
-    // Template String melhorado (usando a classe .card-year sugerida no CSS)
     article.innerHTML = `
-      <h2>${dado.nome} <span class="card-year">(${dado.ano_lancamento})</span></h2>
+      <h2>${dado.nome} <span class="card-year">[${dado.ano_lancamento}]</span></h2>
       <p>${dado.descricao}</p>
-      <a href="${dado.link}" target="_blank">Saiba mais...</a>
+      <a href="${dado.link}" target="_blank" rel="noopener noreferrer">Acessar documentação >></a>
     `;
-    
-    cardContainer.appendChild(article);
+    fragment.appendChild(article);
   }
+  cardContainer.appendChild(fragment);
 }
 
-// Ouve o evento 'input' para buscar dinamicamente enquanto o usuário digita
+// Listeners
+if (formBusca) {
+    formBusca.addEventListener('submit', (event) => {
+        event.preventDefault();
+        iniciarBusca();
+    });
+}
 if (inputBusca) {
-    inputBusca.addEventListener('input', iniciarBusca);
+    inputBusca.addEventListener('input', debounce(iniciarBusca, 300));
+}
+document.addEventListener('DOMContentLoaded', carregarDados);
+
+
+/* --------------------------------------------------
+   EFEITO MATRIX RAIN (CANVAS)
+   -------------------------------------------------- */
+const canvas = document.getElementById('matrix-bg');
+const ctx = canvas.getContext('2d');
+
+// Define o tamanho do canvas igual ao da janela
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Caracteres que cairão (Katakana + Alfabeto + Números)
+const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const nums = '0123456789';
+const alphabet = katakana + latin + nums;
+
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+
+// Array de quedas (uma por coluna)
+const rainDrops = [];
+for (let x = 0; x < columns; x++) {
+    rainDrops[x] = 1;
 }
 
-// Inicia o carregamento dos dados quando o script é executado (ao carregar a página)
-document.addEventListener('DOMContentLoaded', carregarDados);
+// Função que desenha a chuva
+const drawMatrix = () => {
+    // Pinta o fundo de preto (ou roxo escuro da sua paleta) com pouca opacidade
+    // Isso cria o rastro (trail) das letras
+    // Usando seu roxo escuro: #2f192f (rgb: 47, 25, 47)
+    ctx.fillStyle = 'rgba(47, 25, 47, 0.05)'; 
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Cor do texto (Seu verde: #82ee82)
+    ctx.fillStyle = '#82ee82';
+    ctx.font = fontSize + 'px monospace';
+
+    for (let i = 0; i < rainDrops.length; i++) {
+        // Escolhe um caractere aleatório
+        const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+        
+        // Desenha o caractere
+        ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+        // Reseta a gota para o topo aleatoriamente após cruzar a tela
+        if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            rainDrops[i] = 0;
+        }
+        
+        // Incrementa a posição Y
+        rainDrops[i]++;
+    }
+};
+
+// Animação em loop (30fps para ficar mais cinematográfico)
+setInterval(drawMatrix, 33);
+
+// Redimensiona o canvas se a janela mudar de tamanho
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
