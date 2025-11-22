@@ -30,4 +30,4 @@ Este projeto é uma **Single Page Application (SPA)** simples que consome dados 
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/SEU-USUARIO/NOME-DO-REPO.git](https://github.com/SEU-USUARIO/NOME-DO-REPO.git)
+   git clone [https://github.com/Genjitsuu/Base_de_Conhecimento_Matrix.git](https://github.com/Genjitsuu/Base_de_Conhecimento_Matrix.git)
