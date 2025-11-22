@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -9,21 +9,35 @@
     --primary-color: #82ee82;       /* Verde Neon */
     --secondary-color: #fbfbe6;     /* Texto claro */
     --bg-color: #2f192f;            /* Roxo escuro (Base) */
-    --glass-bg: rgba(47, 25, 47, 0.85); /* Versão transparente do BG para os cards */
-    --border-color: #3c4043;
-    --error-color: #ff6b6b;
+    --glass-bg: rgba(47, 25, 47, 0.85); 
     --neon-glow: 0 0 10px rgba(130, 238, 130, 0.5), 0 0 20px rgba(130, 238, 130, 0.3);
+}
+
+/* --- Scrollbar Personalizada --- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color); 
+}
+::-webkit-scrollbar-thumb {
+    background: #4a2c4a; 
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
 }
 
 body {
     margin: 0;
     background: var(--bg-color);
     color: var(--secondary-color);
-    font-family: "Quicksand", sans-serif; /* Ou 'Courier New' para ficar mais hacker */
+    font-family: "Courier Prime", monospace;
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
-    overflow-x: hidden; /* Evita scroll lateral indesejado */
+    overflow-x: hidden;
 }
 
 /* --- Canvas do Matrix --- */
@@ -33,10 +47,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Fica atrás de tudo */
+    z-index: -1;
 }
 
-/* Wrapper para garantir que o conteúdo fique acima do canvas */
+/* Acessibilidade: Desativa animação se o usuário preferir */
+@media (prefers-reduced-motion: reduce) {
+    #matrix-bg { display: none; }
+}
+
 .content-wrapper {
     position: relative;
     z-index: 1;
@@ -45,7 +63,6 @@ body {
     min-height: 100vh;
 }
 
-/* --- Utilitários --- */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -54,11 +71,9 @@ body {
     margin: -1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
     border-width: 0;
 }
 
-/* Efeito de cursor piscando no título */
 .blink {
     animation: blinker 1s linear infinite;
     color: var(--primary-color);
@@ -74,7 +89,6 @@ header {
     gap: 2rem;
     position: sticky;
     top: 0;
-    /* Fundo semi-transparente com efeito blur (vidro) */
     background: rgba(47, 25, 47, 0.9);
     backdrop-filter: blur(5px);
     z-index: 10;
@@ -85,18 +99,13 @@ header {
 header h1 {
     font-size: 1.5rem;
     margin: 0;
-    font-weight: 600;
-    white-space: nowrap;
     color: var(--secondary-color);
-    /* Brilho sutil no texto */
     text-shadow: 0 0 5px var(--primary-color);
 }
 
-/* --- Busca Estilo Hacker --- */
+/* --- Busca --- */
 #form-busca {
     position: relative;
-    display: flex;
-    align-items: center;
     width: 30rem;
     max-width: 100%;
 }
@@ -106,23 +115,15 @@ header h1 {
     padding: 0.8rem 3rem 0.8rem 1.5rem;
     border-radius: 2rem;
     border: 2px solid var(--primary-color);
-    /* Fundo escuro semi-transparente */
     background: rgba(0, 0, 0, 0.5); 
-    font-family: inherit;
     font-size: 1.1rem;
-    color: var(--primary-color); /* Texto verde ao digitar */
-    transition: all 0.3s ease;
-    box-shadow: inset 0 0 10px rgba(130, 238, 130, 0.1);
-}
-
-.search-input::placeholder {
     color: var(--primary-color);
-    opacity: 0.5;
+    transition: all 0.3s ease;
 }
 
 .search-input:focus {
     outline: none;
-    box-shadow: 0 0 15px var(--primary-color), inset 0 0 15px rgba(130, 238, 130, 0.2);
+    box-shadow: 0 0 15px var(--primary-color);
     background: rgba(0, 0, 0, 0.7);
 }
 
@@ -134,118 +135,126 @@ header h1 {
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    color: var(--primary-color);
     width: 40px; 
     height: 40px;
-    border-radius: 50%;
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
+    display: flex; 
+    align-items: center; 
     justify-content: center;
-    text-shadow: 0 0 5px var(--primary-color);
 }
 
-.search-button:hover {
-    background-color: rgba(130, 238, 130, 0.2);
-    box-shadow: 0 0 10px var(--primary-color);
-}
-
-/* --- Cards Estilo Terminal --- */
+/* --- Cards --- */
 main {
     flex-grow: 1; 
-    overflow-y: auto;
-    max-width: 84rem; 
     width: 100%;
-    margin: 2rem auto 0 auto;
-    padding: 0 2rem 1.5rem 2rem; 
+    max-width: 84rem; 
+    margin: 2rem auto;
+    padding: 0 2rem; 
 }
 
 .card {
-    /* Fundo roxo escuro transparente */
     background: var(--glass-bg);
-    padding: 1.5rem; /* Aumentei um pouco o padding */
+    padding: 1.5rem;
     max-width: 45rem; 
-    margin: 0 auto 1.25rem auto; 
-    
-    /* Borda verde brilhante */
+    margin: 0 auto 1.5rem auto; 
     border: 1px solid var(--primary-color);
-    border-radius: 8px; /* Bordas levemente arredondadas */
+    border-radius: 8px;
     box-shadow: 0 0 5px rgba(130, 238, 130, 0.1);
-    
     transition: all 0.3s ease;
     backdrop-filter: blur(2px);
 }
 
 .card:hover {
     transform: scale(1.01) translateY(-2px); 
-    cursor: default; 
     box-shadow: var(--neon-glow);
     background: rgba(47, 25, 47, 0.95);
 }
 
+/* Header do Card (Logo + Titulo) */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 2px var(--primary-color));
+}
+
 .card h2 {
-    margin-top: 0;
-    margin-bottom: 0.75rem; 
-    font-weight: 700;
+    margin: 0;
     font-size: 1.6rem;
     color: var(--primary-color);
-    display: flex; 
-    align-items: baseline;
-    gap: 0.5rem;
     text-shadow: 0 0 5px rgba(130, 238, 130, 0.6);
 }
 
 .card-year {
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 0.9rem;
     color: var(--secondary-color);
     opacity: 0.7;
-    text-shadow: none;
+    margin-left: 0.5rem;
+}
+
+/* Tags Styles */
+.tags-container {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.tag {
+    font-size: 0.75rem;
+    border: 1px solid var(--primary-color);
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: rgba(130, 238, 130, 0.1);
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .card p {
-    margin: 0.75rem 0; 
-    line-height: 1.65; 
-    font-size: 1rem;
+    line-height: 1.6; 
     color: var(--secondary-color);
 }
 
-.card a {
+.card-link {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
     display: inline-block;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     border-bottom: 1px dashed var(--primary-color);
     transition: all 0.2s;
 }
 
-.card a:hover {
+.card-link:hover {
     background-color: var(--primary-color);
-    color: var(--bg-color); /* Inverte as cores no hover */
-    text-decoration: none;
+    color: var(--bg-color);
     border-bottom-style: solid;
 }
 
-/* --- Mensagens --- */
+/* --- Feedback --- */
 .feedback-mensagem, .erro-mensagem {
     background: var(--glass-bg);
     padding: 1rem;
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     text-align: center;
-    margin-top: 2rem;
     border-radius: 8px;
 }
+.erro-mensagem { border-color: var(--error-color); color: var(--error-color); }
 
 /* --- Footer --- */
 .footer {
-    width: 100%;
-    color: var(--secondary-color);
     background-color: rgba(47, 25, 47, 0.95);
     padding: 15px 20px;
     border-top: 1px solid var(--primary-color);
-    font-size: 0.8rem;
     margin-top: auto;
 }
 
@@ -254,37 +263,28 @@ main {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Aumentei levemente o gap para separar melhor os blocos */
+    gap: 20px;
 }
 
 .footer-links a {
     color: var(--secondary-color);
     text-decoration: none;
-    transition: all 0.3s ease; /* Transição suave */
-    display: flex;             /* Alinha ícone e texto verticalmente */
-    align-items: center;       /* Centraliza verticalmente */
-    gap: 8px;                  /* Espaço entre o ícone e o texto */
-}
-
-/* Estilização específica para o ícone aumentar um pouco no hover */
-.footer-links a i {
-    font-size: 1.2rem; /* Ícone levemente maior que o texto */
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .footer-links a:hover {
     color: var(--primary-color);
     text-shadow: 0 0 5px var(--primary-color);
-    transform: translateY(-2px); /* Efeito sutil de flutuação */
+    transform: translateY(-2px);
 }
 
 /* --- Media Queries --- */
 @media (max-width: 768px) {
-    header { 
-        flex-direction: column;
-        gap: 1rem;
-    }
-    header h1 { white-space: normal; text-align: center; }
+    header { flex-direction: column; gap: 1rem; }
     #form-busca { width: 100%; }
+    .card-header { flex-direction: column; align-items: flex-start; }
 }

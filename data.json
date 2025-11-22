@@ -1,38 +1,50 @@
 [
   {
     "nome": "JavaScript",
-    "descricao": "O JavaScript (JS) é uma linguagem de programação de alto nível, interpretada (ou Just-in-Time compilada), e multi-paradigma, mais conhecida por ser a linguagem fundamental da web. Foi criado em 1995 por Brendan Eich enquanto trabalhava na Netscape Communications, e seu principal objetivo era adicionar interatividade e comportamento dinâmico às páginas web (que antes eram apenas estáticas).",
+    "descricao": "O JavaScript (JS) é uma linguagem de programação de alto nível, interpretada, e multi-paradigma. Fundamental da web, adiciona interatividade e comportamento dinâmico.",
     "ano_lancamento": 1995,
-    "link": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
+    "link": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    "tags": ["Frontend", "Web", "Scripting"]
   },
   {
     "nome": "Python",
-    "descricao": "Python é uma linguagem de programação de alto nível, interpretada, de propósito geral, conhecida por sua sintaxe clara e legível, o que a torna excelente para iniciantes e muito produtiva para desenvolvedores experientes. Criada por Guido van Rossum e lançada em 1991, seu design enfatiza a filosofia da legibilidade do código.",
+    "descricao": "Linguagem de alto nível e propósito geral, famosa pela sintaxe clara. Excelente para iniciantes, Ciência de Dados e Automação.",
     "ano_lancamento": 1991,
-    "link": "https://docs.python.org/pt-br/3.14/"
+    "link": "https://docs.python.org/pt-br/3/tutorial/index.html",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "tags": ["Data Science", "Backend", "IA", "Scripting"]
   },
   {
     "nome": "Java",
-    "descricao": "Java é uma linguagem de programação de alto nível, orientada a objetos e multiplataforma, conhecida pelo seu slogan 'escreva uma vez, execute em qualquer lugar'. Ela utiliza a Máquina Virtual Java (JVM) para garantir a portabilidade do código compilado (bytecode) entre diferentes sistemas operacionais. É amplamente usada no desenvolvimento de aplicações corporativas (enterprise), sistemas Android, software de grande porte, e tecnologias de Big Data.",
+    "descricao": "Linguagem orientada a objetos e multiplataforma ('escreva uma vez, execute em qualquer lugar'). Amplamente usada em sistemas corporativos e Android.",
     "ano_lancamento": 1995,
-    "link": "https://docs.oracle.com/en/java/"
+    "link": "https://docs.oracle.com/en/java/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    "tags": ["Enterprise", "Mobile", "Backend"]
   },
   {
     "nome": "C#",
-    "descricao": "C# é uma linguagem moderna, orientada a objetos e fortemente tipada, desenvolvida pela Microsoft como parte da plataforma .NET. Ela foi projetada para ser uma evolução das linguagens C++ e Java, combinando facilidade de uso com robustez e desempenho. É a linguagem mais popular para o desenvolvimento no ecossistema .NET, sendo usada para criar aplicativos Windows (desktop), serviços web (backends), jogos (com Unity), e soluções em nuvem.",
+    "descricao": "Linguagem moderna e fortemente tipada da Microsoft. Evolução do C++ e Java, principal linguagem do ecossistema .NET e desenvolvimento de jogos (Unity).",
     "ano_lancamento": 2000,
-    "link": "https://learn.microsoft.com/pt-br/dotnet/csharp/"
+    "link": "https://learn.microsoft.com/pt-br/dotnet/csharp/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+    "tags": ["Microsoft", "Games", "Enterprise", "Web"]
   },
   {
     "nome": "Ruby",
-    "descricao": "Ruby é uma linguagem de programação dinâmica, de código aberto, com foco na simplicidade e na produtividade, sendo **orientada a objetos** pura. Sua sintaxe elegante e concisa visa tornar a leitura e escrita de código mais natural e agradável. É amplamente utilizada para desenvolvimento web, sendo o framework **Ruby on Rails** (lançado em 2004) o maior impulsionador de sua popularidade.",
+    "descricao": "Linguagem dinâmica focada na simplicidade e produtividade. Famosa pelo framework Ruby on Rails, que revolucionou o desenvolvimento web.",
     "ano_lancamento": 1995,
-    "link": "https://www.ruby-lang.org/pt/"
+    "link": "https://www.ruby-lang.org/pt/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg",
+    "tags": ["Web", "Backend", "Scripting"]
   },
   {
     "nome": "Go (Golang)",
-    "descricao": "Go, ou Golang, é uma linguagem de programação **compilada** e **fortemente tipada**, criada pelo Google em 2009. Foi projetada para ser simples, eficiente e, acima de tudo, para facilitar a **concorrência** (execução paralela) em sistemas de grande escala e servidores web. Sua sintaxe é inspirada em C, mas com recursos modernos como coleta de lixo (garbage collection) e tipagem estática.",
+    "descricao": "Criada pelo Google, é compilada e focada em performance e concorrência. Ideal para microsserviços e sistemas de alta escala.",
     "ano_lancamento": 2009,
-    "link": "https://go.dev/"
+    "link": "https://go.dev/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg",
+    "tags": ["Google", "System", "Backend", "Cloud"]
   }
 ]
