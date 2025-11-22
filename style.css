@@ -256,18 +256,27 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 20px; /* Aumentei levemente o gap para separar melhor os blocos */
 }
 
 .footer-links a {
     color: var(--secondary-color);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: all 0.3s ease; /* Transição suave */
+    display: flex;             /* Alinha ícone e texto verticalmente */
+    align-items: center;       /* Centraliza verticalmente */
+    gap: 8px;                  /* Espaço entre o ícone e o texto */
+}
+
+/* Estilização específica para o ícone aumentar um pouco no hover */
+.footer-links a i {
+    font-size: 1.2rem; /* Ícone levemente maior que o texto */
 }
 
 .footer-links a:hover {
     color: var(--primary-color);
     text-shadow: 0 0 5px var(--primary-color);
+    transform: translateY(-2px); /* Efeito sutil de flutuação */
 }
 
 /* --- Media Queries --- */
