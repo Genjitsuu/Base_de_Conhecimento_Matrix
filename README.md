@@ -36,4 +36,34 @@ Este projeto é uma **Single Page Application (SPA)** simples que consome dados 
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/Genjitsuu/Base_de_Conhecimento_Matrix.git](https://github.com/Genjitsuu/Base_de_Conhecimento_Matrix.git)
+   git clone https://github.com/Genjitsuu/Base_de_Conhecimento_Matrix.git
+
+2. **Abra o projeto:**
+Como o projeto utiliza fetch para ler um arquivo JSON, navegadores modernos podem bloquear a requisição por segurança (CORS) se você abrir o index.html diretamente clicando duas vezes.
+
+**Opção A (VS Code - Recomendado):**
+* Instale a extensão **Live Server**
+* Clique com o botão direito no index.html e escolha "Open with Live Server".
+
+**Opção B (Python):**
+* No terminal, dentro da pasta do projeto:
+  ```bash
+  python -m http.server 8000
+* Acesse http://localhost:8000 no navegador.
+
+## 🎨 Paleta de Cores
+
+| Cor | Hex | Uso |
+|-----|-----|-----|
+| Verde Neon | #82ee82 | Destaques, Bordas, Texto Matrix |
+| Roxo Escuro | #2f192f | Base do Background |
+| Glass BG | rgba (47, 25, 47, 0.85) | Fundo dos Cards |
+| Creme | #fbfbe6 | Texto Principal |
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Sinta-se livre para usar e modificar.
+
+<p align="center">
+Feito com 💜 e ☕ por <a href="https://www.google.com/search?q=https://www.linkedin.com/in/thiago-t-amaro-5aa286231">Thiago T. Amaro</a>
+</p>
