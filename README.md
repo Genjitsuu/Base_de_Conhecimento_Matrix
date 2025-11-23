@@ -65,5 +65,5 @@ Como o projeto utiliza fetch para ler um arquivo JSON, navegadores modernos pode
 Este projeto está sob a licença MIT. Sinta-se livre para usar e modificar.
 
 <p align="center">
-Feito com 💜 e ☕ por <a href="https://www.google.com/search?q=https://www.linkedin.com/in/thiago-t-amaro-5aa286231">Thiago T. Amaro</a>
+Feito com 💜 e ☕ por <a href="https://br.linkedin.com/in/thiago-t-amaro-5aa286231">Thiago T. Amaro</a>
 </p>
