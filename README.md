@@ -25,6 +25,7 @@ Este projeto é uma **Single Page Application (SPA)** simples que consome dados 
     * `Async/Await` para requisições.
     * Lógica de renderização dinâmica.
     * Manipulação de Canvas 2D.
+* **Google Gemini:** Geração de alguns conteúdos e melhorias no código base
 
 ## 👀 Resultado final
    
