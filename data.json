@@ -46,5 +46,205 @@
     "link": "https://go.dev/",
     "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg",
     "tags": ["Google", "System", "Backend", "Cloud"]
+  },
+  {
+    "nome": "TypeScript",
+    "descricao": "Superset tipado do JavaScript criado pela Microsoft. Adiciona tipagem estática opcional, facilitando a escalabilidade e manutenção de grandes aplicações.",
+    "ano_lancamento": 2012,
+    "link": "https://www.typescriptlang.org/docs/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    "tags": ["Frontend", "Microsoft", "Web", "Superset"]
+  },
+  {
+    "nome": "Rust",
+    "descricao": "Linguagem de sistemas focada em segurança de memória e performance extrema sem Garbage Collector. A favorita para infraestrutura moderna e WebAssembly.",
+    "ano_lancamento": 2010,
+    "link": "https://www.rust-lang.org/pt-BR/learn",
+    "logo": "https://static.cdnlogo.com/logos/r/88/rust.svg",
+    "tags": ["Systems", "Performance", "Backend", "WebAssembly"]
+  },
+  {
+    "nome": "C++",
+    "descricao": "Evolução do C com orientação a objetos. Poderosa e de baixo nível, é a espinha dorsal de motores de jogos, sistemas operacionais e softwares de alta performance.",
+    "ano_lancamento": 1985,
+    "link": "https://devdocs.io/cpp/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+    "tags": ["Systems", "Games", "Performance", "Legacy"]
+  },
+  {
+    "nome": "PHP",
+    "descricao": "Linguagem de script server-side que alimenta grande parte da web (incluindo WordPress). Evoluiu significativamente com foco em performance e tipagem.",
+    "ano_lancamento": 1995,
+    "link": "https://www.php.net/docs.php",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+    "tags": ["Backend", "Web", "Server"]
+  },
+  {
+    "nome": "Swift",
+    "descricao": "Criada pela Apple para substituir o Objective-C. Moderna, segura e rápida, é a linguagem padrão para desenvolvimento no ecossistema iOS e macOS.",
+    "ano_lancamento": 2014,
+    "link": "https://www.swift.org/documentation/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg",
+    "tags": ["Apple", "Mobile", "iOS", "Systems"]
+  },
+  {
+    "nome": "Kotlin",
+    "descricao": "Linguagem moderna que roda na JVM, totalmente interoperável com Java. Adotada pelo Google como a linguagem oficial para desenvolvimento Android.",
+    "ano_lancamento": 2011,
+    "link": "https://kotlinlang.org/docs/home.html",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+    "tags": ["Mobile", "Android", "Backend", "JVM"]
+  },
+  {
+    "nome": "Dart",
+    "descricao": "Linguagem otimizada para UI desenvolvida pelo Google. É a base do framework Flutter, permitindo compilação nativa para mobile e web.",
+    "ano_lancamento": 2011,
+    "link": "https://dart.dev/guides",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg",
+    "tags": ["Google", "Mobile", "Web", "Flutter"]
+  },
+  {
+    "nome": "React",
+    "descricao": "Biblioteca JavaScript criada pelo Facebook para construção de interfaces de usuário. Baseia-se em componentes reutilizáveis e Virtual DOM.",
+    "ano_lancamento": 2013,
+    "link": "https://pt-br.react.dev/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "tags": ["Frontend", "Meta", "UI", "Library"]
+  },
+  {
+    "nome": "Vue.js",
+    "descricao": "Framework JavaScript progressivo. Focado em ser adotável incrementalmente, oferece uma curva de aprendizado suave e alta flexibilidade para interfaces.",
+    "ano_lancamento": 2014,
+    "link": "https://vuejs.org/guide/introduction.html",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+    "tags": ["Frontend", "Framework", "UI"]
+  },
+  {
+    "nome": "Angular",
+    "descricao": "Plataforma e framework para construção de aplicações web robustas (SPA). Mantido pelo Google, utiliza TypeScript e oferece uma solução completa.",
+    "ano_lancamento": 2010,
+    "link": "https://angular.io/docs",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+    "tags": ["Frontend", "Google", "Framework", "Enterprise"]
+  },
+  {
+    "nome": "Node.js",
+    "descricao": "Ambiente de execução JavaScript server-side construído sobre o motor V8 do Chrome. Permite criar servidores escaláveis e aplicações em tempo real.",
+    "ano_lancamento": 2009,
+    "link": "https://nodejs.org/pt-br/docs/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    "tags": ["Backend", "Runtime", "JavaScript", "Server"]
+  },
+  {
+    "nome": "Docker",
+    "descricao": "Plataforma de containerização que empacota aplicações e suas dependências. Garante consistência entre ambientes de desenvolvimento e produção.",
+    "ano_lancamento": 2013,
+    "link": "https://docs.docker.com/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    "tags": ["DevOps", "Containers", "Infrastructure"]
+  },
+  {
+    "nome": "Git",
+    "descricao": "Sistema de controle de versão distribuído criado por Linus Torvalds. Essencial para colaboração e rastreamento de histórico de código.",
+    "ano_lancamento": 2005,
+    "link": "https://git-scm.com/doc",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    "tags": ["DevOps", "Tools", "VCS"]
+  },
+  {
+    "nome": "PostgreSQL",
+    "descricao": "Banco de dados relacional open source avançado. Conhecido por sua confiabilidade, robustez e suporte a consultas complexas e JSON.",
+    "ano_lancamento": 1996,
+    "link": "https://www.postgresql.org/docs/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    "tags": ["Database", "SQL", "Relational", "Backend"]
+  },
+  {
+    "nome": "MongoDB",
+    "descricao": "Banco de dados NoSQL orientado a documentos. Armazena dados em formato flexível tipo JSON, ideal para grandes volumes e desenvolvimento ágil.",
+    "ano_lancamento": 2009,
+    "link": "https://www.mongodb.com/docs/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    "tags": ["Database", "NoSQL", "Document", "Backend"]
+  },
+  {
+    "nome": "MySQL",
+    "descricao": "O sistema de gerenciamento de banco de dados relacional mais popular do mundo. Base da stack LAMP e amplamente usado na web.",
+    "ano_lancamento": 1995,
+    "link": "https://dev.mysql.com/doc/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    "tags": ["Database", "SQL", "Relational", "Oracle"]
+  },
+  {
+    "nome": "Redis",
+    "descricao": "Armazenamento de estrutura de dados em memória (RAM). Usado como banco de dados, cache e message broker, conhecido por sua velocidade.",
+    "ano_lancamento": 2009,
+    "link": "https://redis.io/docs/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
+    "tags": ["Database", "Cache", "NoSQL", "Performance"]
+  },
+  {
+    "nome": "Linux",
+    "descricao": "Kernel de sistema operacional open source. A base da internet, servidores, supercomputadores e dispositivos Android.",
+    "ano_lancamento": 1991,
+    "link": "https://www.kernel.org/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+    "tags": ["OS", "Server", "Open Source", "Kernel"]
+  },
+  {
+    "nome": "HTML5",
+    "descricao": "A espinha dorsal da Web. Linguagem de marcação usada para estruturar e apresentar conteúdo na World Wide Web.",
+    "ano_lancamento": 1993,
+    "link": "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    "tags": ["Frontend", "Web", "Standard", "Markup"]
+  },
+  {
+    "nome": "CSS3",
+    "descricao": "Linguagem de estilo utilizada para descrever a apresentação de documentos HTML. Controla layout, cores, fontes e animações.",
+    "ano_lancamento": 1996,
+    "link": "https://developer.mozilla.org/pt-BR/docs/Web/CSS",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    "tags": ["Frontend", "Web", "Style", "Design"]
+  },
+  {
+    "nome": "Svelte",
+    "descricao": "Abordagem radical para interfaces de usuário. Diferente de React/Vue, compila o código em JS puro e eficiente durante o build, sem Virtual DOM.",
+    "ano_lancamento": 2016,
+    "link": "https://svelte.dev/docs",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
+    "tags": ["Frontend", "Compiler", "UI", "Performance"]
+  },
+  {
+    "nome": "Flutter",
+    "descricao": "Toolkit de UI do Google para criar aplicações nativas compiladas para mobile, web e desktop a partir de um único código base (Dart).",
+    "ano_lancamento": 2017,
+    "link": "https://docs.flutter.dev/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
+    "tags": ["Mobile", "Google", "Cross-Platform", "UI"]
+  },
+  {
+    "nome": "GraphQL",
+    "descricao": "Linguagem de consulta para APIs e um runtime para responder a essas consultas. Permite que o cliente peça exatamente os dados que precisa.",
+    "ano_lancamento": 2015,
+    "link": "https://graphql.org/learn/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+    "tags": ["API", "Data", "Web", "Meta"]
+  },
+  {
+    "nome": "Kubernetes",
+    "descricao": "Sistema open source para automatizar a implantação, escalonamento e gerenciamento de aplicações em contêineres (Orquestração).",
+    "ano_lancamento": 2014,
+    "link": "https://kubernetes.io/docs/home/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
+    "tags": ["DevOps", "Infrastructure", "Cloud", "Scaling"]
+  },
+  {
+    "nome": "Bash",
+    "descricao": "Shell Unix e linguagem de comando. Ferramenta fundamental para automação de tarefas, scripting e interação com sistemas Linux/Unix.",
+    "ano_lancamento": 1989,
+    "link": "https://www.gnu.org/software/bash/manual/",
+    "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg",
+    "tags": ["Scripting", "Linux", "DevOps", "Shell"]
   }
 ]
